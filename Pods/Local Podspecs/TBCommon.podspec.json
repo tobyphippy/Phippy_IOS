@@ -1,0 +1,28 @@
+{
+  "name": "TBCommon",
+  "version": "0.0.3",
+  "summary": "1",
+  "description": "3232332",
+  "homepage": "https://github.com/james1896/TBCommon",
+  "license": "MIT",
+  "authors": {
+    "james1896": "james@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/james1896/TBCommon.git",
+    "tag": "0.0.3",
+    "submodules": true
+  },
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  },
+  "subspecs": [
+    {
+      "name": "TBCommon",
+      "source_files": "common/*.{h,m}"
+    }
+  ]
+}

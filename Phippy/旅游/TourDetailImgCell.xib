@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="181" id="KGk-i7-Jjw" customClass="TourDetailImgCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mp2-xi-f0G">
+                        <rect key="frame" x="18" y="13" width="284" height="154.5"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mp2-xi-f0G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Fch-Of-2aM"/>
+                    <constraint firstItem="mp2-xi-f0G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="lAY-4o-OnA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="mp2-xi-f0G" secondAttribute="bottom" constant="5" id="ufV-au-k6B"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mp2-xi-f0G" secondAttribute="trailing" constant="10" id="vNz-s6-cPX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgView" destination="mp2-xi-f0G" id="Hl2-9A-XL8"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="122.5"/>
+        </tableViewCell>
+    </objects>
+</document>
