@@ -13,7 +13,7 @@
 static NSString * MSKEY_FOODSTORE_Rank            =@"rank";
 static NSString * MSKEY_FOODSTORE_Name            =@"name";
 static NSString * MSKEY_FOODSTORE_Wechat          =@"wechat";
-static NSString * MSKEY_FOODSTORE_Adress          =@"adress";
+static NSString * MSKEY_FOODSTORE_Address          =@"address";
 static NSString * MSKEY_FOODSTORE_Img_url         =@"img_url";
 static NSString * MSKEY_FOODSTORE_Store_id        =@"store_id";
 static NSString * MSKEY_FOODSTORE_Store_type      =@"store_type";

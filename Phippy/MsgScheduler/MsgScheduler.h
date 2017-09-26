@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "UIImageView+PHIWebCache.h"
 #import "MsgSchedulerKeys.h"
+#import "PHIRequest.h"
 
 @interface MsgScheduler : NSObject
 
@@ -17,4 +18,5 @@
 + (NSDictionary *)getGoodsWithStoreID:(NSString *)storeId;
 + (NSDictionary *)getTourArticles;
 
++ (void)getStoresWithSuccess:(success)success failure:(failure)failure;
 @end

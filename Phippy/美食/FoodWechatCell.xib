@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="436" height="147"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="436" height="147"/>
+                <rect key="frame" x="0.0" y="0.0" width="436" height="146.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S3Z-X4-qMa">
@@ -29,20 +29,20 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="送餐时间 8:00 ～ 24:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj6-W5-gge">
-                        <rect key="frame" x="105.5" y="30" width="161.5" height="22"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="105.5" y="30" width="151.5" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300P起送" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBq-GY-5go" userLabel="qisong">
-                        <rect key="frame" x="105.5" y="52" width="67.5" height="22.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="105.5" y="52" width="63.5" height="22.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址:abcdefg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGN-Z3-4m2" userLabel="add">
-                        <rect key="frame" x="105.5" y="74.5" width="91.5" height="22"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="105.5" y="74.5" width="322.5" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -90,6 +90,7 @@
                     <constraint firstItem="Qj6-W5-gge" firstAttribute="top" secondItem="PVu-ws-r6n" secondAttribute="bottom" id="UaA-fE-64A"/>
                     <constraint firstItem="pGN-Z3-4m2" firstAttribute="leading" secondItem="PVu-ws-r6n" secondAttribute="leading" id="XuW-Bo-JrY"/>
                     <constraint firstItem="PVu-ws-r6n" firstAttribute="top" secondItem="S3Z-X4-qMa" secondAttribute="top" id="dsv-ou-CyU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="pGN-Z3-4m2" secondAttribute="trailing" id="eCi-Lp-CZ8"/>
                     <constraint firstItem="Wey-ff-ZLv" firstAttribute="height" secondItem="PVu-ws-r6n" secondAttribute="height" id="fA6-3o-dIg"/>
                     <constraint firstItem="pGN-Z3-4m2" firstAttribute="top" secondItem="FBq-GY-5go" secondAttribute="bottom" id="fdl-1V-FHB"/>
                     <constraint firstItem="FBq-GY-5go" firstAttribute="height" secondItem="PVu-ws-r6n" secondAttribute="height" id="gRf-9o-f6k"/>

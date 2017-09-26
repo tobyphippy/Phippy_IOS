@@ -35,9 +35,9 @@
     NSDictionary *dict = self.dataArray[indexPath.row];
     
     cell.title.text =dict[MSKEY_FOODSTORE_Name];
-    cell.deliveryTime.text = dict[MSKEY_FOODSTORE_Delivertime];
-    cell.qisongCondition.text = dict[MSKEY_FOODSTORE_Qisongcondition];
-    cell.adress.text = dict[MSKEY_FOODSTORE_Adress];
+    cell.deliveryTime.text = [NSString stringWithFormat:@"营业时间: %@",dict[MSKEY_FOODSTORE_Delivertime]];
+    cell.qisongCondition.text = [NSString stringWithFormat:@"%@ 起送",dict[MSKEY_FOODSTORE_Qisongcondition]];
+    cell.adress.text = [NSString stringWithFormat:@"%@",dict[MSKEY_FOODSTORE_Address]];
     cell.contact.text = dict[MSKEY_FOODSTORE_Phone_number];
     [cell.imgView phi_setImageWithURL:nil];
     return cell;
@@ -60,29 +60,18 @@
     
 }
 
-
 - (void)viewDidAppear:(BOOL)animated{
     NSLog(@"viewDidAppear");
     
-//    store_type = 2 表示餐馆
-    [PHIRequest storeWithParameters:@{@"store_type":@"2"} success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"");
+    [MsgScheduler getStoresWithSuccess:^(NSURLSessionDataTask *task, id responseObject) {
+        
         self.dataArray = [responseObject objectForKey:@"data"];
         [self.tableView reloadData];
-        
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
+    
     }];
 
-    [PHIRequest initializeUserWithIP:@"0.0.0.0" userId:@"userid"
-                                time:@"2017" uuid:[TBCommon getUUID]
-                              device:[NSString stringWithFormat:@"ios|%@",[TBCommon getDeviceModel]] version:[TBCommon getVersionNumber]
-                            language:[TBCommon getSystemLanguage]
-                             success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-    }];
+  
     
 //    NSLog(@"initializeUser: %@",[MsgScheduler initializeUser]);
 //    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -93,7 +82,7 @@
 //            [MBProgressHUD hideHUDForView:self.view animated:YES];
 //        });
 //    });
-//    NSLog(@"getFoodStore%@",[MsgScheduler getFoodStore]);
+    NSLog(@"getFoodStore%@",[MsgScheduler getFoodStore]);
     
 //     [self.tabBarController.tabBar showBadgeOnItmIndex:0];
 }

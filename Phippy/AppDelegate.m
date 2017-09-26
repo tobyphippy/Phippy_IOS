@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "AFNetworkReachabilityManager.h"
-
+#import "PHIRequest.h"
+#import "TBCommon.h"
 @interface AppDelegate ()
 
 @end
@@ -49,6 +50,19 @@
     
     // 3.开始监控
     [mgr startMonitoring];
+    
+    
+    
+    //用户基本信息
+    [PHIRequest initializeUserWithIP:@"0.0.0.0" userId:@"userid"
+                                time:@"2017" uuid:[TBCommon getUUID]
+                              device:[NSString stringWithFormat:@"ios|%@",[TBCommon getDeviceModel]] version:[TBCommon getVersionNumber]
+                            language:[TBCommon getSystemLanguage]
+                             success:^(NSURLSessionDataTask *task, id responseObject) {
+                                 
+                             } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                 
+                             }];
     return YES;
 }
 
