@@ -9,7 +9,7 @@
 #import "MsgScheduler.h"
 #import "PHIDataAgent.h"
 #import "PHIProcessor.h"
-
+#import "PHIVerification.h"
 #import "PHIRequest.h"
 #import "TBCommon.h"
 @interface MsgScheduler()
@@ -17,18 +17,13 @@
 @property(nonatomic,strong) PHIDataAgent *dataAgent;
 @property(nonatomic,strong) PHIProcessor *processor;
 
+@property(nonatomic,strong) PHIVerification *verification;
 
-@property(nonatomic,strong) NSMutableDictionary *requestTimeDictionary;
 @end
 
 @implementation MsgScheduler
 
-- (NSMutableDictionary *)requestTimeDictionary{
-    if(!_requestTimeDictionary){
-        _requestTimeDictionary = [[NSMutableDictionary alloc]initWithCapacity:0];
-    }
-    return _requestTimeDictionary;
-}
+
 
 + (NSDictionary *)initializeUser{
     __block NSDictionary *dict = @{};
@@ -53,34 +48,19 @@
 
 + (void)getStoresWithSuccess:(success)success failure:(failure)failure{
    
-    
-    NSString *key = @"getStores";
-//   请求间隔 六小时
-    NSInteger requestInterval = 60*60*6;
-    
-    NSNumber *lastNumber = [[self shareManager].requestTimeDictionary objectForKey:key];
-    
-    NSInteger interval =([[NSDate date] timeIntervalSince1970] - [lastNumber doubleValue]);
-    if(interval < requestInterval){
-        NSLog(@"%@ 请求间隔  %ld  小于 %ld",key,interval,requestInterval);
+    if(![[self shareManager].verification isAllowRequestOnGetStores]){
         return;
     }
-    
-    
-    //---------------------
-    
     
     //    store_type = 2 表示餐馆
     [PHIRequest storeWithParameters:@{@"store_type":@"2"} success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        
-        [[self shareManager].requestTimeDictionary setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:key];
-        
+        [[self shareManager].verification updateRequestTimeForGetStores];
         success(task,responseObject);
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
-        [[self shareManager].requestTimeDictionary setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:key];
+        [[self shareManager].verification updateRequestTimeForGetStores];
         failure(task,error);
     }];
 }
@@ -115,6 +95,14 @@
 //---------------------------------------
 //set get
 //---------------------------------------
+
+- (PHIVerification *)verification{
+    if(!_verification){
+        _verification = [[PHIVerification alloc] init];
+    }
+    return _verification;
+}
+
 - (PHIDataAgent *)dataAgent{
     if(!_dataAgent){
         _dataAgent = [[PHIDataAgent alloc]init];

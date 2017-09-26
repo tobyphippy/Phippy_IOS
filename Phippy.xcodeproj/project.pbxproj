@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6DF6A024699DAC0C80EB3874 /* libPods-Phippy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0089FD8250DEF449F6F864 /* libPods-Phippy.a */; };
+		902FDB971F7AA2F0008654C9 /* PHIVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 902FDB961F7AA2F0008654C9 /* PHIVerification.m */; };
 		A609859A1F2EC4A6002344E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60985981F2EC4A6002344E3 /* LoginViewController.m */; };
 		A609859B1F2EC4A6002344E3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A60985991F2EC4A6002344E3 /* LoginViewController.xib */; };
 		A609859F1F2EC4BD002344E3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A609859D1F2EC4BD002344E3 /* RegisterViewController.m */; };
@@ -93,6 +94,8 @@
 
 /* Begin PBXFileReference section */
 		53C4987B9C185EF7D67A4E8C /* Pods-Phippy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phippy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phippy/Pods-Phippy.debug.xcconfig"; sourceTree = "<group>"; };
+		902FDB951F7AA2F0008654C9 /* PHIVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHIVerification.h; sourceTree = "<group>"; };
+		902FDB961F7AA2F0008654C9 /* PHIVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHIVerification.m; sourceTree = "<group>"; };
 		A60985971F2EC4A6002344E3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A60985981F2EC4A6002344E3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A60985991F2EC4A6002344E3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -260,6 +263,16 @@
 				ADC4174BD22103F7F3F371AC /* Pods-Phippy.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		902FDB941F7AA2F0008654C9 /* verification */ = {
+			isa = PBXGroup;
+			children = (
+				902FDB951F7AA2F0008654C9 /* PHIVerification.h */,
+				902FDB961F7AA2F0008654C9 /* PHIVerification.m */,
+			);
+			name = verification;
+			path = DataAgent/verification;
 			sourceTree = "<group>";
 		};
 		95C5247DF23C69D43B803DF0 /* Frameworks */ = {
@@ -461,6 +474,7 @@
 		A68C4D401F21F76700DBF094 /* MsgScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				902FDB941F7AA2F0008654C9 /* verification */,
 				A68C4D4E1F21FCE100DBF094 /* MsgScheduler.h */,
 				A68C4D4F1F21FCE100DBF094 /* MsgScheduler.m */,
 				A68C4D511F21FF0900DBF094 /* MsgSchedulerKeys.h */,
@@ -481,7 +495,6 @@
 				A68C4D561F22033F00DBF094 /* PHIDataAgent.m */,
 				A68C4D421F21F76700DBF094 /* parser */,
 				A68C4D431F21F76700DBF094 /* processor */,
-				A68C4D441F21F76700DBF094 /* verification */,
 			);
 			path = DataAgent;
 			sourceTree = "<group>";
@@ -502,13 +515,6 @@
 				A68C4D5D1F2204B300DBF094 /* PHIProcessor.m */,
 			);
 			path = processor;
-			sourceTree = "<group>";
-		};
-		A68C4D441F21F76700DBF094 /* verification */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = verification;
 			sourceTree = "<group>";
 		};
 		A68C4D451F21F76700DBF094 /* Network */ = {
@@ -794,6 +800,7 @@
 				A66AC2A71F1EEA23008FB856 /* TourDetailLabCell.m in Sources */,
 				A625C0C01F132A9300C28072 /* FoodTableViewCell.m in Sources */,
 				A6BBAA241F36BF0000419C9E /* MyOrderFooterView.m in Sources */,
+				902FDB971F7AA2F0008654C9 /* PHIVerification.m in Sources */,
 				A625C0DD1F14ADC000C28072 /* PhippyTabBarController.m in Sources */,
 				A68C4D501F21FCE100DBF094 /* MsgScheduler.m in Sources */,
 				A68C4D5E1F2204B300DBF094 /* PHIProcessor.m in Sources */,

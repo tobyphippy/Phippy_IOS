@@ -82,7 +82,7 @@
 //            [MBProgressHUD hideHUDForView:self.view animated:YES];
 //        });
 //    });
-    NSLog(@"getFoodStore%@",[MsgScheduler getFoodStore]);
+  
     
 //     [self.tabBarController.tabBar showBadgeOnItmIndex:0];
 }
