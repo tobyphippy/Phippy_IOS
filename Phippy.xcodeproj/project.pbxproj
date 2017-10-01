@@ -474,9 +474,9 @@
 		A68C4D401F21F76700DBF094 /* MsgScheduler */ = {
 			isa = PBXGroup;
 			children = (
-				902FDB941F7AA2F0008654C9 /* verification */,
 				A68C4D4E1F21FCE100DBF094 /* MsgScheduler.h */,
 				A68C4D4F1F21FCE100DBF094 /* MsgScheduler.m */,
+				902FDB941F7AA2F0008654C9 /* verification */,
 				A68C4D511F21FF0900DBF094 /* MsgSchedulerKeys.h */,
 				A68C4D521F2202B300DBF094 /* NSDictionary+MsgScheduler.h */,
 				A68C4D531F2202B300DBF094 /* NSDictionary+MsgScheduler.m */,
@@ -719,7 +719,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8ECB7A3736F6B30D33CA6C9D /* [CP] Embed Pods Frameworks */ = {

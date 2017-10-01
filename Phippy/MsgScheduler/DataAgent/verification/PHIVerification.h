@@ -13,6 +13,10 @@
 @property(nonatomic,strong) NSMutableDictionary *requestTimeDictionary;
 
 
+//food
 - (BOOL)isAllowRequestOnGetStores;
 - (void)updateRequestTimeForGetStores;
+
+- (BOOL)isAllowRequestOnGetGoods;
+- (void)updateRequestTimeForGetGoods;
 @end

@@ -10,6 +10,7 @@
 #import "AFNetworkReachabilityManager.h"
 #import "PHIRequest.h"
 #import "TBCommon.h"
+#import <SMS_SDK/SMSSDK.h>
 @interface AppDelegate ()
 
 @end
@@ -63,6 +64,11 @@
                              } failure:^(NSURLSessionDataTask *task, NSError *error) {
                                  
                              }];
+    
+    
+    
+    
+    [SMSSDK registerApp:@"2133eb20ac60c" withSecret:@"22f7c559b1c5db34790861581328471e"];
     return YES;
 }
 

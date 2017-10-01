@@ -10,6 +10,9 @@
 
 @interface TBCommon : NSObject
 
+//得到当前时间
++ (NSString *)getCurrentTimes;
+
 + (NSString *)getSystemLanguage;
 + (NSString *)getVersionNumber;
 //获得ip地址

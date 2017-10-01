@@ -13,5 +13,6 @@
 @property(nonatomic,strong) NSString *store_id;
 @property (nonatomic,strong) NSString *wechat;
 @property (nonatomic,strong) NSString *phoneNumber;
+@property (nonatomic,strong) NSString *qisong_condition;
 
 @end

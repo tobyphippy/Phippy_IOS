@@ -1,5 +1,5 @@
 //
-// IQBarButtonItem.m
+//  IQBarButtonItem.m
 // https://github.com/hackiftekhar/IQKeyboardManager
 // Copyright (c) 2013-16 Iftekhar Qurashi.
 //
@@ -26,10 +26,8 @@
 
 @implementation IQBarButtonItem
 
-+(void)initialize
++(void)load
 {
-    [super initialize];
-
     //Tint color
     [[self appearance] setTintColor:nil];
 
@@ -76,33 +74,6 @@
     
     [[self appearance] setBackButtonTitlePositionAdjustment:UIOffsetZero forBarMetrics:UIBarMetricsDefault];
     [[self appearance] setBackButtonBackgroundVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsDefault];
-}
-
-- (instancetype)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(nullable id)target action:(nullable SEL)action
-{
-    self = [super initWithBarButtonSystemItem:systemItem target:target action:action];
-    
-    if (self)
-    {
-        _isSystemItem = YES;
-    }
-    
-    return self;
-}
-
-
--(void)setTarget:(nullable id)target action:(nullable SEL)action
-{
-    NSInvocation *invocation = nil;
-    
-    if (target && action)
-    {
-        invocation = [NSInvocation invocationWithMethodSignature:[target methodSignatureForSelector:action]];
-        invocation.target = target;
-        invocation.selector = action;
-    }
-    
-    self.invocation = invocation;
 }
 
 @end

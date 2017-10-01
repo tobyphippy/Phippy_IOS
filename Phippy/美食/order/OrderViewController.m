@@ -11,6 +11,7 @@
 #import "OrderTableViewCell.h"
 #import "MyOrderFooterView.h"
 #import "MyOrderHeaderView.h"
+#import "LoginViewController.h"
 @interface OrderViewController ()<UITableViewDelegate,UITableViewDataSource,PhiOrderDelegate>
 
 @property(nonatomic,strong) UIView *payView;
@@ -56,6 +57,25 @@
     [self.view addSubview:self.payView];
     //需要请求 订单号 接口
     
+    if([PHIUserManager shareManager].orderNumber == nil){
+        [MsgScheduler getGenerateOrderNumberWithSuccess:^(NSURLSessionDataTask *task, id responseObject) {
+            NSLog(@"GenerateOrderNumber:%@",responseObject);
+            
+            self.userManager.orderNumber = responseObject[@"number"];
+            self.headerView.orderNumber = self.userManager.orderNumber;
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        }];
+    }
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+//    NSLog(@"dataArray:%@",self.dataArray);
+    
+  
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -202,6 +222,7 @@
 - (MyOrderHeaderView *)headerView{
     if(!_headerView){
         _headerView = [[MyOrderHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.width, 65)];
+        _headerView.orderNumber = self.userManager.orderNumber;
     }
     return _headerView;
 }
@@ -218,6 +239,7 @@
         payButton.layer.cornerRadius = 6;
         [payButton setBackgroundColor:[UIColor whiteColor]];
         [payButton setTitleColor:COLOR(70, 70, 70, 1) forState:UIControlStateNormal];
+        [payButton addTarget:self action:@selector(pay:) forControlEvents:UIControlEventTouchUpInside];
         payButton.frame = CGRectMake(_payView.width-20-btnWidth, 5, btnWidth, _payView.height-10);
         
         [_payView addSubview:payButton];
@@ -225,7 +247,18 @@
     return _payView;
 }
 
-
+- (void)pay:(UIButton *)sender{
+    
+    if(!self.userManager.isLogin){
+        LoginViewController *login = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:login];
+        [self presentViewController:nav animated:YES completion:nil];
+        
+        return;
+    }
+   
+    
+}
 
 /*
  #pragma mark - Navigation

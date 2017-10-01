@@ -6,11 +6,17 @@ target 'Phippy' do
     pod 'FMDB'
     pod 'SDWebImage'
     pod 'MBProgressHUD', '~> 1.0.0'
-    
+
     pod 'TBCommon',:git => 'https://github.com/james1896/TBCommon'
 #    pod 'TBCommon',:git => 'https://github.com/james1896/TBCommon',:tag=>"0.0.2"
     pod 'TBRequest',:git => 'https://github.com/james1896/TBRequest'
     
+#   使用微信分享、登录、收藏、支付等功能需要的库以及文件。
+    #pod 'WechatOpenSDK'
+    
+#    mob 短信验证服务
+    pod 'MOBFoundation_IDFA'
+    pod 'SMSSDK'
     
     
     

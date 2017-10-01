@@ -12,6 +12,11 @@
 
 @implementation PHIRequest
 
++ (void)getOderNumberWithParameters:(NSDictionary *)parameters success:(success)success failure:(failure)failure{
+    NSString *url = [NSString stringWithFormat:@"%@/generateOrderNumber",TB_BASE_URL];
+    [self handlePOSTWithURL:url Parameters:parameters originalParas:parameters success:success failure:failure];
+}
+
 + (void)initializeUserWithIP:(NSString *)ip userId:(NSString *)userId
                         time:(NSString *)time uuid:(NSString *)uuid
                       device:(NSString *)device version:(NSString *)version

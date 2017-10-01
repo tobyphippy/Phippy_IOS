@@ -24,5 +24,6 @@
 
 + (void)lifeWithParameters:(NSDictionary *)parameters success:(success)success failure:(failure)failure;
 
++ (void)getOderNumberWithParameters:(NSDictionary *)parameters success:(success)success failure:(failure)failure;
 
 @end

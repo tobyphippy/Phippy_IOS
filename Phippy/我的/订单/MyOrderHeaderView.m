@@ -43,7 +43,7 @@
 //}
 
 - (void)setOrderNumber:(NSString *)orderNumber{
-    orderNumberLab.text = orderNumber;
+    orderNumberLab.text = [NSString stringWithFormat:@"订单号:%@",orderNumber];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame

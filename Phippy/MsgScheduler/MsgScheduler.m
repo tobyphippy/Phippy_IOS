@@ -23,7 +23,14 @@
 
 @implementation MsgScheduler
 
-
++ (void)getGenerateOrderNumberWithSuccess:(success)success failure:(failure)failure{
+    
+    [PHIRequest getOderNumberWithParameters:@{@"aa":@"bb"} success:^(NSURLSessionDataTask *task, id responseObject) {
+        success(task,responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        failure(task,error);
+    }];
+}
 
 + (NSDictionary *)initializeUser{
     __block NSDictionary *dict = @{};
@@ -47,7 +54,7 @@
 //---------------------------------------
 
 + (void)getStoresWithSuccess:(success)success failure:(failure)failure{
-   
+    
     if(![[self shareManager].verification isAllowRequestOnGetStores]){
         return;
     }
@@ -62,6 +69,23 @@
         
         [[self shareManager].verification updateRequestTimeForGetStores];
         failure(task,error);
+    }];
+}
+
++ (void)getGoodsWithStoreID:(NSString *)storeID success:(success)success failure:(failure)failure{
+    
+    
+    //    if(![[self shareManager].verification isAllowRequestOnGetGoods]){
+    //        return;
+    //    }
+    
+    [PHIRequest goodsWithParameters:@{@"store_id":storeID} success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        success(task,responseObject);
+        [[self shareManager].verification updateRequestTimeForGetGoods];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        failure(task,error);
+        [[self shareManager].verification updateRequestTimeForGetGoods];
     }];
 }
 

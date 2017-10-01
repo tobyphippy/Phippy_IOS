@@ -27,5 +27,13 @@ typedef NS_ENUM(NSInteger,PHINetworkStatus){
 
 @property (nonatomic)PHINetworkStatus networkStatus;
 
+///--------------------------------------------------
+// 是否登陆 标示
+///--------------------------------------------------
+@property (nonatomic) BOOL isLogin;
+
+
+@property(nonatomic,strong) NSString *orderNumber;
+
 + (NSString *)getPathForDeliveryAddressData;
 @end

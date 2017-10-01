@@ -33,22 +33,26 @@
     [super viewDidLoad];
     [self.phippyNavigationController addBackButton];
     [self.phippyNavigationController addRightButtonWithButton:self.navRightBtn];
-    
     [self.view addSubview:self.collectionView];
     
-    [PHIRequest goodsWithParameters:@{@"store_id":self.store_id} success:^(NSURLSessionDataTask *task, id responseObject) {
+    [MsgScheduler getGoodsWithStoreID:self.store_id success:^(NSURLSessionDataTask *task, id responseObject) {
         self.dataArray = responseObject[@"data"];
         
         if(self.dataArray.count != 0){
-        
+            
             [self.collectionView reloadData];
         }else{
             NSLog(@"暂无菜单");
         }
-       
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
+    
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,11 +60,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    
-   
-}
+
 
 #pragma mark - 内部方法
 
@@ -104,6 +104,7 @@
         }
     
         OrderViewController *orderController = [[OrderViewController alloc]init];
+        orderController.hidesBottomBarWhenPushed = YES;
         orderController.dataArray = @[marr];
         [self.phippyNavigationController pushViewController:orderController animated:YES];
     }else{

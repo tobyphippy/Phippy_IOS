@@ -19,4 +19,6 @@
 + (NSDictionary *)getTourArticles;
 
 + (void)getStoresWithSuccess:(success)success failure:(failure)failure;
++ (void)getGoodsWithStoreID:(NSString *)storeID success:(success)success failure:(failure)failure;
++ (void)getGenerateOrderNumberWithSuccess:(success)success failure:(failure)failure;
 @end
