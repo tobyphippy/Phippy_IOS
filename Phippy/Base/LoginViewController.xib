@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="codeLab" destination="7ZH-07-eG7" id="7A0-aY-svj"/>
+                <outlet property="loginButton" destination="Yib-q9-xbE" id="Fgt-aD-lXi"/>
                 <outlet property="password" destination="o6P-x4-jFe" id="EGb-N5-bNB"/>
                 <outlet property="sendCode" destination="CVz-iK-MeJ" id="3G1-ox-0sJ"/>
                 <outlet property="userName" destination="hks-g8-Zwv" id="eS0-tS-ojU"/>
@@ -33,7 +34,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yib-q9-xbE">
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yib-q9-xbE">
                             <rect key="frame" x="0.0" y="171" width="260" height="50"/>
                             <color key="backgroundColor" red="1" green="0.92833585692894316" blue="0.50833798762459415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>

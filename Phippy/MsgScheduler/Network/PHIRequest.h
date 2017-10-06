@@ -26,4 +26,9 @@
 
 + (void)getOderNumberWithParameters:(NSDictionary *)parameters success:(success)success failure:(failure)failure;
 
+//提交美食订单
++ (void)SubmitFoodOrderWithParameters:(NSDictionary *)parameters success:(success)success failure:(failure)failure;
+
+//登陆注册
++ (void)loginWtihParameters:(NSDictionary *)parameters success:(success)success failure:(failure)failure;
 @end

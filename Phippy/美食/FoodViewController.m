@@ -57,6 +57,7 @@
     NSDictionary *dict = self.dataArray[indexPath.row];
     
     self.detailController = [[FoodDetailViewController alloc] init];
+    self.detailController.hidesBottomBarWhenPushed = YES;
     self.detailController.title = dict[MSKEY_FOODSTORE_Name];
     self.detailController.store_id = dict[MSKEY_FOODSTORE_Store_id];
     self.detailController.phoneNumber = dict[MSKEY_FOODSTORE_Phone_number];

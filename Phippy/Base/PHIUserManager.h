@@ -31,8 +31,11 @@ typedef NS_ENUM(NSInteger,PHINetworkStatus){
 // 是否登陆 标示
 ///--------------------------------------------------
 @property (nonatomic) BOOL isLogin;
+@property (nonatomic,strong) NSString *userName;
 
-
+///--------------------------------------------------
+// 当前未使用的订单号
+///--------------------------------------------------
 @property(nonatomic,strong) NSString *orderNumber;
 
 + (NSString *)getPathForDeliveryAddressData;

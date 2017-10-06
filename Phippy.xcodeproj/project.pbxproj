@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6DF6A024699DAC0C80EB3874 /* libPods-Phippy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0089FD8250DEF449F6F864 /* libPods-Phippy.a */; };
 		902FDB971F7AA2F0008654C9 /* PHIVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 902FDB961F7AA2F0008654C9 /* PHIVerification.m */; };
+		902FDB9D1F823539008654C9 /* OrderHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 902FDB9C1F823539008654C9 /* OrderHeaderView.m */; };
 		A609859A1F2EC4A6002344E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60985981F2EC4A6002344E3 /* LoginViewController.m */; };
 		A609859B1F2EC4A6002344E3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A60985991F2EC4A6002344E3 /* LoginViewController.xib */; };
 		A609859F1F2EC4BD002344E3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A609859D1F2EC4BD002344E3 /* RegisterViewController.m */; };
@@ -96,6 +97,8 @@
 		53C4987B9C185EF7D67A4E8C /* Pods-Phippy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phippy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Phippy/Pods-Phippy.debug.xcconfig"; sourceTree = "<group>"; };
 		902FDB951F7AA2F0008654C9 /* PHIVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHIVerification.h; sourceTree = "<group>"; };
 		902FDB961F7AA2F0008654C9 /* PHIVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHIVerification.m; sourceTree = "<group>"; };
+		902FDB9B1F823539008654C9 /* OrderHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeaderView.h; sourceTree = "<group>"; };
+		902FDB9C1F823539008654C9 /* OrderHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHeaderView.m; sourceTree = "<group>"; };
 		A60985971F2EC4A6002344E3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A60985981F2EC4A6002344E3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A60985991F2EC4A6002344E3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -587,6 +590,8 @@
 		A6BBAA451F39542600419C9E /* order */ = {
 			isa = PBXGroup;
 			children = (
+				902FDB9B1F823539008654C9 /* OrderHeaderView.h */,
+				902FDB9C1F823539008654C9 /* OrderHeaderView.m */,
 				A6D6BEF01F399E9F00314887 /* OrderTableViewCell.h */,
 				A6D6BEF11F399E9F00314887 /* OrderTableViewCell.m */,
 				A6D6BEF21F399E9F00314887 /* OrderTableViewCell.xib */,
@@ -769,6 +774,7 @@
 				A625C0AC1F1313D000C28072 /* LifeViewController.m in Sources */,
 				A6D23F371F1DEE6100F0C62E /* FoodWechatCell.m in Sources */,
 				A66AC2D01F1EFC4A008FB856 /* PHIUserManager.m in Sources */,
+				902FDB9D1F823539008654C9 /* OrderHeaderView.m in Sources */,
 				A625C0B21F13140400C28072 /* BaseNavigationController.m in Sources */,
 				A68394421F171CEA00790D30 /* FeedbackViewController.m in Sources */,
 				A625C0871F13115900C28072 /* main.m in Sources */,

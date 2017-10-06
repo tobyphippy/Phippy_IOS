@@ -12,6 +12,18 @@
 
 @implementation PHIRequest
 
+//登陆 注册
++ (void)loginWtihParameters:(NSDictionary *)parameters success:(success)success failure:(failure)failure{
+    NSString *url = [NSString stringWithFormat:@"%@/login",TB_BASE_URL];
+    [self handlePOSTWithURL:url Parameters:parameters originalParas:parameters success:success failure:failure];
+}
+
++ (void)SubmitFoodOrderWithParameters:(NSDictionary *)parameters success:(success)success failure:(failure)failure{
+    NSString *url = [NSString stringWithFormat:@"%@/order",TB_BASE_URL];
+    [self handlePOSTWithURL:url Parameters:parameters originalParas:parameters success:success failure:failure];
+}
+
+//获得 订单号
 + (void)getOderNumberWithParameters:(NSDictionary *)parameters success:(success)success failure:(failure)failure{
     NSString *url = [NSString stringWithFormat:@"%@/generateOrderNumber",TB_BASE_URL];
     [self handlePOSTWithURL:url Parameters:parameters originalParas:parameters success:success failure:failure];

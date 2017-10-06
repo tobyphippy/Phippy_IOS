@@ -54,6 +54,8 @@ static PHIUserManager * _instance = nil;
     return [PHIUserManager shareManager] ;
 }
 
+
+#pragma mark- set get
 - (void)setDownloadImageOnlyWifi:(BOOL)downloadImageOnlyWifi{
 
     [[NSUserDefaults standardUserDefaults] setBool:downloadImageOnlyWifi forKey:@"phi_downloadImageOnlyWifi"];
@@ -63,6 +65,27 @@ static PHIUserManager * _instance = nil;
 - (BOOL)downloadImageOnlyWifi{
     return [[NSUserDefaults standardUserDefaults]boolForKey:@"phi_downloadImageOnlyWifi"];
 }
+
+- (void)setIsLogin:(BOOL)isLogin{
+    [[NSUserDefaults standardUserDefaults] setBool:isLogin forKey:@"phi_islogin"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)isLogin{
+    return [[NSUserDefaults standardUserDefaults]boolForKey:@"phi_islogin"];
+}
+
+- (void)setUserName:(NSString *)userName{
+    
+    
+    [self saveObject:userName forKey:@"phi_userName"];
+}
+
+- (NSString *)userName{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"phi_userName"];
+}
+
+
 
 - (void)saveObject:(id)obj forKey:(NSString *)key{
     

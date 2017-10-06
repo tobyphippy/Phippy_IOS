@@ -10,18 +10,26 @@
 
 #import "OrderTableViewCell.h"
 #import "MyOrderFooterView.h"
-#import "MyOrderHeaderView.h"
+#import "OrderHeaderView.h"
 #import "LoginViewController.h"
 @interface OrderViewController ()<UITableViewDelegate,UITableViewDataSource,PhiOrderDelegate>
 
 @property(nonatomic,strong) UIView *payView;
 
-@property (nonatomic,strong) MyOrderHeaderView *headerView;
+@property (nonatomic,strong) OrderHeaderView *headerView;
 @property (nonatomic,strong) MyOrderFooterView *footerView;
+@property (nonatomic,strong) NSMutableDictionary *orderDataDict;
 @end
 
 @implementation OrderViewController{
     int payView_height;
+}
+
+- (NSMutableDictionary *)orderDataDict{
+    if(!_orderDataDict){
+        _orderDataDict = [[NSMutableDictionary alloc]initWithCapacity:0];
+    }
+    return _orderDataDict;
 }
 
 #pragma mark - life cycle
@@ -63,11 +71,15 @@
             
             self.userManager.orderNumber = responseObject[@"number"];
             self.headerView.orderNumber = self.userManager.orderNumber;
+            
+            [self.orderDataDict setObject:self.userManager.orderNumber forKey:@"order_id"];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];
     }
     
+    [self.orderDataDict setObject:self.dataArray forKey:@"list"];
+    NSLog(@"data:%@",self.dataArray);
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -95,6 +107,8 @@
     }
     
     [self.footerView sumCount:[NSString stringWithFormat:@"%ld",array.count] Price:[NSString stringWithFormat:@"%.2f",money]];
+    
+    [self.orderDataDict setObject:[NSString stringWithFormat:@"%.2f",money] forKey:@"order_price"];
     
 }
 
@@ -219,9 +233,9 @@
     return _footerView;
 }
 
-- (MyOrderHeaderView *)headerView{
+- (OrderHeaderView *)headerView{
     if(!_headerView){
-        _headerView = [[MyOrderHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.width, 65)];
+        _headerView = [[OrderHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.width, 65)];
         _headerView.orderNumber = self.userManager.orderNumber;
     }
     return _headerView;
@@ -240,7 +254,7 @@
         [payButton setBackgroundColor:[UIColor whiteColor]];
         [payButton setTitleColor:COLOR(70, 70, 70, 1) forState:UIControlStateNormal];
         [payButton addTarget:self action:@selector(pay:) forControlEvents:UIControlEventTouchUpInside];
-        payButton.frame = CGRectMake(_payView.width-20-btnWidth, 5, btnWidth, _payView.height-10);
+        payButton.frame = CGRectMake(_payView.width-10-btnWidth, 5, btnWidth, _payView.height-10);
         
         [_payView addSubview:payButton];
     }
@@ -257,6 +271,42 @@
         return;
     }
    
+    
+    
+    
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"确定提交订单吗？"
+                                                                   message:@"提交订单后 请在【我】- 【我的订单】中查看订单最新动态"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              //响应事件
+                                                              NSLog(@"action = %@", action);
+                                                              
+                                                              self.userManager.orderNumber = nil;
+                                                              [self.orderDataDict setObject:self.userManager.userName forKey:@"submitted_by"];
+                                                              
+                                                              [self.orderDataDict setObject:self.storeID forKey:@"store_id"];
+                                                              
+                                                            
+                                                              [PHIRequest SubmitFoodOrderWithParameters:self.orderDataDict success:^(NSURLSessionDataTask *task, id responseObject) {
+                                                                  NSLog(@"food order:%@",responseObject);
+                                                              } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                                                  
+                                                              }];
+                                                          }];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"再想想" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              //响应事件
+                                                              NSLog(@"action = %@", action);
+                                                              
+                                                          }];
+    
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 

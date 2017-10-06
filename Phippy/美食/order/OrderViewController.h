@@ -10,4 +10,5 @@
 
 @interface OrderViewController : BaseTabViewController
 
+@property (nonatomic,strong) NSString *storeID;
 @end

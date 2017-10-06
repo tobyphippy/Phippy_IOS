@@ -106,6 +106,7 @@
         OrderViewController *orderController = [[OrderViewController alloc]init];
         orderController.hidesBottomBarWhenPushed = YES;
         orderController.dataArray = @[marr];
+        orderController.storeID = self.store_id;
         [self.phippyNavigationController pushViewController:orderController animated:YES];
     }else{
         NSLog(@"内部数据错误");
