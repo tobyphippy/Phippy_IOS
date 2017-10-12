@@ -7,7 +7,7 @@
 //
 
 #import "LifeViewController.h"
-
+#import "LifeHeaderView.h"
 @interface LifeViewController ()
 
 @end
@@ -17,8 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    [self.phippyNavigationController standardNavigationBarView];
+    
+    
+    LifeHeaderView *header = [[LifeHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.width,  (SCREEN_HEIGHT - NAVBAR_HEIGHT - TABBAR_HEIGHT))];
+    self.tableView.tableHeaderView = header;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
+    return cell;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

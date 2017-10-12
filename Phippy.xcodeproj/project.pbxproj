@@ -10,6 +10,7 @@
 		6DF6A024699DAC0C80EB3874 /* libPods-Phippy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0089FD8250DEF449F6F864 /* libPods-Phippy.a */; };
 		902FDB971F7AA2F0008654C9 /* PHIVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 902FDB961F7AA2F0008654C9 /* PHIVerification.m */; };
 		902FDB9D1F823539008654C9 /* OrderHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 902FDB9C1F823539008654C9 /* OrderHeaderView.m */; };
+		902FDBA01F8735BE008654C9 /* LifeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 902FDB9F1F8735BE008654C9 /* LifeHeaderView.m */; };
 		A609859A1F2EC4A6002344E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60985981F2EC4A6002344E3 /* LoginViewController.m */; };
 		A609859B1F2EC4A6002344E3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A60985991F2EC4A6002344E3 /* LoginViewController.xib */; };
 		A609859F1F2EC4BD002344E3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A609859D1F2EC4BD002344E3 /* RegisterViewController.m */; };
@@ -99,6 +100,8 @@
 		902FDB961F7AA2F0008654C9 /* PHIVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHIVerification.m; sourceTree = "<group>"; };
 		902FDB9B1F823539008654C9 /* OrderHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeaderView.h; sourceTree = "<group>"; };
 		902FDB9C1F823539008654C9 /* OrderHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHeaderView.m; sourceTree = "<group>"; };
+		902FDB9E1F8735BE008654C9 /* LifeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeHeaderView.h; sourceTree = "<group>"; };
+		902FDB9F1F8735BE008654C9 /* LifeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeHeaderView.m; sourceTree = "<group>"; };
 		A60985971F2EC4A6002344E3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A60985981F2EC4A6002344E3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A60985991F2EC4A6002344E3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -394,6 +397,8 @@
 				A66AC2B91F1EED8D008FB856 /* LaneOfYanTableViewCell.h */,
 				A66AC2BA1F1EED8D008FB856 /* LaneOfYanTableViewCell.m */,
 				A66AC2BB1F1EED8D008FB856 /* LaneOfYanTableViewCell.xib */,
+				902FDB9E1F8735BE008654C9 /* LifeHeaderView.h */,
+				902FDB9F1F8735BE008654C9 /* LifeHeaderView.m */,
 			);
 			path = "生活";
 			sourceTree = "<group>";
@@ -778,6 +783,7 @@
 				A625C0B21F13140400C28072 /* BaseNavigationController.m in Sources */,
 				A68394421F171CEA00790D30 /* FeedbackViewController.m in Sources */,
 				A625C0871F13115900C28072 /* main.m in Sources */,
+				902FDBA01F8735BE008654C9 /* LifeHeaderView.m in Sources */,
 				A60985CD1F3066F6002344E3 /* UIView+Attribute.m in Sources */,
 				A66AC2C01F1EEDF1008FB856 /* SettingViewController.m in Sources */,
 				A66AC2B31F1EEC4A008FB856 /* LittleLadyViewController.m in Sources */,

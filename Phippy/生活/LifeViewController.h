@@ -6,8 +6,8 @@
 //  Copyright © 2017 kg.self.edu. All rights reserved.
 //
 
-#import "PhippyViewController.h"
+#import "BaseTabViewController.h"
 
-@interface LifeViewController : PhippyViewController
+@interface LifeViewController : BaseTabViewController
 
 @end

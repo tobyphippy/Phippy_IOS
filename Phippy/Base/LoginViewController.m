@@ -97,7 +97,7 @@
 - (IBAction)loginAccount:(id)sender {
     
     
-    if([self phoneNumberCheck:self.userName.text] && self.password.text.length == 4){
+    if(self.userName.text.length == 11 && self.password.text.length == 4){
         NSString *zone = @"63";
         if(codeFlag == 1) zone = @"86";
         
@@ -203,7 +203,17 @@
     
     self.userName.keyboardType = UIKeyboardTypeNumberPad;
     self.password.keyboardType = UIKeyboardTypeNumberPad;
+    
+    self.userName.delegate = self;
+    self.password.delegate = self;
+    
+    [self.view addTapGestureRecognizerWithTarget:self action:@selector(backViewTap:)];
    
+}
+
+- (void)backViewTap:(UITapGestureRecognizer *)tap {
+    [self.userName resignFirstResponder];
+    [self.password resignFirstResponder];
 }
 
 - (void)countdown{
